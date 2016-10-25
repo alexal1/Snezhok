@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAbout"
+    android:clickable="true"
+    android:onClick="onScreenClick"
+    android:weightSum="10"
+    tools:context="com.alex_aladdin.snowball.AboutActivity">
+
+    <TextView
+        android:id="@+id/caption_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="@string/about_caption"
+        android:textSize="50sp"
+        android:textColor="@color/colorText"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <ImageView
+            android:id="@+id/image_finger"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/about"
+            android:scaleType="fitEnd"
+            android:adjustViewBounds="true"
+            tools:ignore="ContentDescription"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/image_finger"
+            android:layout_toStartOf="@id/image_finger"
+            android:verticalScrollbarPosition="left"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:fadeScrollbars="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:id="@+id/long_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="@string/about_text"
+                android:textSize="30sp"
+                android:textColor="@color/colorText"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:paddingRight="0dp"
+                android:paddingEnd="0dp"/>
+        </ScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/about_link"
+            android:textSize="20sp"
+            android:textColor="@color/colorText"
+            android:textAllCaps="false"
+            android:background="@drawable/link"
+            android:drawableRight="@drawable/star"
+            android:drawableEnd="@drawable/star"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingStart="30dp"
+            android:paddingRight="30dp"
+            android:paddingEnd="30dp"
+            android:onClick="onLinkClick"/>
+    </RelativeLayout>
+
+</LinearLayout>
